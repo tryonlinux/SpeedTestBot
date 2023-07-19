@@ -1,0 +1,22 @@
+version: '3'
+services:
+  speedtestbotdb:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: SpeedTestBot
+    ports:
+      - 5432:5432
+  speedtestbot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - speedtestbotdb
+    environment:
+      DB_HOST: speedtestbotdb
+      DB_PORT: 5432
+      DB_NAME: SpeedTestBot
+      DB_USER: myuser
+      DB_PASSWORD: mypassword

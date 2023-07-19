@@ -1,0 +1,20 @@
+{
+  "name": "speed-test-bot",
+  "version": "1.0.0",
+  "description": "Extremely Simple Speed Test Bot that will run Speedtest-CLI and store the results in a postgres database for later visualization of internet speeds.",
+  "main": "index.ts",
+  "repository": "git@github.com:tryonlinux/SpeedTestBot.git",
+  "author": "Jordan Tryon <tryonlinux@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "pg": "^8.11.1",
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1"
+  }
+}
